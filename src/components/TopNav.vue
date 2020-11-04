@@ -40,7 +40,10 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   background-color: skyblue;
   display: flex;
@@ -56,6 +59,7 @@ export default {
 
   >.logo {
     max-width: 6em;
+    margin-left: 54px;
     margin-right: auto;
 
     .avatar {
@@ -69,6 +73,7 @@ export default {
     align-items: center;
     white-space: nowrap;
     flex-wrap: nowrap;
+    padding: 16px;
 
     >li a {
       margin: 0 1em;

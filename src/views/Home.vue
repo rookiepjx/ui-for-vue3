@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .banner {
-  // background-color: #ecf5ff;
+  margin-top: 80px;
   min-height: 550px;
   display: flex;
   justify-content: center;
