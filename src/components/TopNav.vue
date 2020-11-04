@@ -1,9 +1,7 @@
 <template>
 <div class="nav">
-  <div class="logo">
-    <router-link to="/">
-      <img class="avatar" src="../assets/img/avatar.png" alt="" />
-    </router-link>
+  <div class="logo" @click="toggleAside">
+    <img class="avatar" src="../assets/img/avatar.png" alt="" />
   </div>
   <ul class="menu">
     <li><a href="https://github.com/rookiepjx/ui-for-vue3">GitHub</a></li>
@@ -25,10 +23,14 @@ export default {
     // inject get父组件中provide的变量asideVisible
     const asideVisible = inject < Ref < boolean >> ("asideVisible");
     console.log("aside的值为" + asideVisible.value);
+    const toggleAside = () => {
+      asideVisible.value = !asideVisible.value
+    }
 
     // return出去模板中才能使用这个变量
     return {
       asideVisible,
+      toggleAside
     };
   },
 };
@@ -36,6 +38,8 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
+  position: relative;
+  z-index: 10;
   background-color: skyblue;
   display: flex;
   align-items: center;
@@ -62,7 +66,14 @@ export default {
       margin: 0 1em;
       padding: 0.4em 1em;
       border-radius: 10px;
-      background-color: #fff;
+      background-color: #eee;
+      color: #000;
+      transition: .2s linear;
+    }
+
+    >li a:hover {
+      color: #fff;
+      background-color: #000;
     }
   }
 }

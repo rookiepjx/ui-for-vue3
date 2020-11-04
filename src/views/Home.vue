@@ -49,11 +49,16 @@ export default {
 
     >a {
       color: #fff;
-      width: 50px;
+      min-width: 50px;
       margin: 1em 1em;
       padding: 0.4em 1em;
       border-radius: 10px;
       background-color: #67c23a;
+      transition: .2s linear;
+    }
+
+    >a:hover {
+      background-color: #94f75b;
     }
   }
 }
