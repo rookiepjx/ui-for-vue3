@@ -1,6 +1,7 @@
 <template>
 <div class="nav">
-  <div class="logo" @click="toggleAside">
+  <img class="toggleBtn" @click="toggleAside" src="../assets/img/menu.png" alt="" />
+  <div class="logo">
     <img class="avatar" src="../assets/img/avatar.png" alt="" />
   </div>
   <ul class="menu">
@@ -24,13 +25,13 @@ export default {
     const asideVisible = inject < Ref < boolean >> ("asideVisible");
     console.log("aside的值为" + asideVisible.value);
     const toggleAside = () => {
-      asideVisible.value = !asideVisible.value
-    }
+      asideVisible.value = !asideVisible.value;
+    };
 
     // return出去模板中才能使用这个变量
     return {
       asideVisible,
-      toggleAside
+      toggleAside,
     };
   },
 };
@@ -44,6 +45,12 @@ export default {
   display: flex;
   align-items: center;
   padding: 16px;
+
+  >.toggleBtn {
+    display: none;
+    width: 28px;
+    height: 28px;
+  }
 
   >.logo {
     max-width: 6em;
@@ -68,12 +75,27 @@ export default {
       border-radius: 10px;
       background-color: #eee;
       color: #000;
-      transition: .2s linear;
+      transition: 0.2s linear;
     }
 
     >li a:hover {
       color: #fff;
       background-color: #000;
+    }
+  }
+
+  //手机端 隐藏右边menu logo居中 显示切换aside按钮
+  @media (max-width: 500px) {
+    >.toggleBtn {
+      display: inline-block;
+    }
+
+    >.menu {
+      display: none;
+    }
+
+    >.logo {
+      margin: 0 auto;
     }
   }
 }
