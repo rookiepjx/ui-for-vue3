@@ -1,10 +1,8 @@
 <template>
-<div>
-  <TopNav />
-  <div class="content">
-    <aside>侧边栏</aside>
-    <main>内容区</main>
-  </div>
+<TopNav />
+<div class="content">
+  <aside>侧边栏</aside>
+  <main>内容区</main>
 </div>
 </template>
 

@@ -1,14 +1,12 @@
 <template>
-<div>
-  <TopNav />
-  <div class="banner">
-    <h1 class="title">Star UI</h1>
-    <h2 class="desc">一个基于Vue3的简洁UI库</h2>
-    <p class="actions">
-      <router-link to="/">GitHub</router-link>
-      <router-link to="/doc">Get Start</router-link>
-    </p>
-  </div>
+<TopNav />
+<div class="banner">
+  <h1 class="title">Star UI</h1>
+  <h2 class="desc">一个基于Vue3的简洁UI库</h2>
+  <p class="actions">
+    <a href="https://github.com/">GitHub</a>
+    <router-link to="/doc">Get Start</router-link>
+  </p>
 </div>
 </template>
 
