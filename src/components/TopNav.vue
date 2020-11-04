@@ -2,7 +2,9 @@
 <div class="nav">
   <img class="toggleBtn" @click="toggleAside" src="../assets/img/menu.png" alt="" />
   <div class="logo">
-    <img class="avatar" src="../assets/img/avatar.png" alt="" />
+    <router-link to="/">
+      <img class="avatar" src="../assets/img/avatar.png" alt="" />
+    </router-link>
   </div>
   <ul class="menu">
     <li><a href="https://github.com/rookiepjx/ui-for-vue3">GitHub</a></li>
@@ -23,7 +25,6 @@ export default {
   setup() {
     // inject get父组件中provide的变量asideVisible
     const asideVisible = inject < Ref < boolean >> ("asideVisible");
-    console.log("aside的值为" + asideVisible.value);
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
@@ -47,6 +48,7 @@ export default {
   padding: 16px;
 
   >.toggleBtn {
+    position: absolute;
     display: none;
     width: 28px;
     height: 28px;
@@ -57,7 +59,6 @@ export default {
     margin-right: auto;
 
     .avatar {
-      margin-left: 10px;
       width: 3em;
       height: 3em;
     }

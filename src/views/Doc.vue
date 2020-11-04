@@ -5,16 +5,16 @@
     <h2>组件列表</h2>
     <ol>
       <li>
-        <router-link to="/1">组件1</router-link>
+        <router-link to="/doc/switch">switch组件</router-link>
       </li>
       <li>
-        <router-link to="/2">组件2</router-link>
+        <router-link to="/doc/a">组件a</router-link>
       </li>
       <li>
-        <router-link to="/3">组件3</router-link>
+        <router-link to="/doc/b">组件b</router-link>
       </li>
       <li>
-        <router-link to="/4">组件4</router-link>
+        <router-link to="/doc/c">组件c</router-link>
       </li>
     </ol>
   </aside>
@@ -36,7 +36,6 @@ export default {
   setup() {
     // inject get父组件中provide的变量asideVisible
     const asideVisible = inject < Ref < boolean >> ("asideVisible");
-    console.log("aside的值为" + asideVisible.value);
 
     // return出去模板中才能使用这个变量
     return {
