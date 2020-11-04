@@ -2,7 +2,7 @@
 <div class="nav">
   <div class="logo">
     <router-link to="/">
-      <img class="avatar" src="../assets/img/avatar.png" alt="">
+      <img class="avatar" src="../assets/img/avatar.png" alt="" />
     </router-link>
   </div>
   <ul class="menu">
@@ -15,7 +15,23 @@
 </template>
 
 <script lang="ts">
-export default {};
+import {
+  inject,
+  Ref
+} from "vue";
+export default {
+  // vue3新增setup函数
+  setup() {
+    // inject get父组件中provide的变量asideVisible
+    const asideVisible = inject < Ref < boolean >> ("asideVisible");
+    console.log("aside的值为" + asideVisible.value);
+
+    // return出去模板中才能使用这个变量
+    return {
+      asideVisible,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -44,7 +60,7 @@ export default {};
 
     >li a {
       margin: 0 1em;
-      padding: .4em 1em;
+      padding: 0.4em 1em;
       border-radius: 10px;
       background-color: #fff;
     }

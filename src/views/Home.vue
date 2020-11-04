@@ -5,7 +5,7 @@
   <h1 class="title">Star UI</h1>
   <h2 class="desc">一个基于Vue3的简洁UI库</h2>
   <p class="actions">
-    <a href="https://github.com/">GitHub</a>
+    <a href="https://github.com/rookiepjx/ui-for-vue3">GitHub</a>
     <router-link to="/doc">Start</router-link>
   </p>
 </div>
@@ -51,9 +51,9 @@ export default {
       color: #fff;
       width: 50px;
       margin: 1em 1em;
-      padding: .4em 1em;
+      padding: 0.4em 1em;
       border-radius: 10px;
-      background-color: #67C23A;
+      background-color: #67c23a;
     }
   }
 }
