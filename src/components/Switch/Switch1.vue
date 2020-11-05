@@ -1,10 +1,9 @@
 <template>
 <div class="box">
-  <h3 class="title">常规用法</h3>
   <button class="switch" @click="toggleSwitch" :class="{ checked: checked }">
     <span></span>
   </button>
-  <div class="status">{{checked?"打开":"关闭"}}</div>
+  <div class="status">{{checked?"已关闭":"已激活"}}</div>
 </div>
 </template>
 
