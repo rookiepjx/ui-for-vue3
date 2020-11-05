@@ -1,9 +1,9 @@
 <template>
 <div class="nav">
-  <img class="toggleBtn" @click="toggleAside" src="../assets/img/menu.png" alt="" />
+  <img class="toggleBtn" @click="toggleAside" src="../../assets/img/menu.png" alt="" />
   <div class="logo">
     <router-link to="/">
-      <img class="avatar" src="../assets/img/avatar.png" alt="" />
+      <img class="avatar" src="../../assets/img/avatar.png" alt="" />
     </router-link>
   </div>
   <ul class="menu">
@@ -45,7 +45,7 @@ export default {
   left: 0;
   width: 100%;
   z-index: 10;
-  background-color: skyblue;
+  background-color: #00a8ff;
   display: flex;
   align-items: center;
   padding: 16px;
@@ -65,6 +65,7 @@ export default {
     .avatar {
       width: 3em;
       height: 3em;
+      transform: translateX(-50%);
     }
   }
 

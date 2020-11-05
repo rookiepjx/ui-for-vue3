@@ -15,19 +15,7 @@ const router = createRouter({
 			children: [
 				{
 					path: "switch",
-					component: () => import("../src/components/Switch.vue"),
-				},
-				{
-					path: "a",
-					component: () => import("../src/components/A.vue"),
-				},
-				{
-					path: "b",
-					component: () => import("../src/components/B.vue"),
-				},
-				{
-					path: "c",
-					component: () => import("../src/components/C.vue"),
+					component: () => import("../src/components/Switch/SwitchDemo.vue"),
 				},
 			],
 		},

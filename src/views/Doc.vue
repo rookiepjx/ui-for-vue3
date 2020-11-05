@@ -20,7 +20,6 @@
       </ol>
     </aside>
     <main>
-      <h2>内容区</h2>
       <router-view />
     </main>
   </div>
@@ -32,7 +31,7 @@ import {
   inject,
   Ref
 } from "vue";
-import TopNav from "../components/TopNav.vue";
+import TopNav from "../components/TopNav/TopNav.vue";
 export default {
   // vue3新增setup函数
   setup() {
@@ -57,40 +56,59 @@ export default {
   height: 100vh;
 
   >.content {
+    flex-grow: 1;
     padding-top: 94px;
     padding-left: 192px;
 
     @media (max-width: 500px) {
       padding-left: 0;
-
-    }
-
-    aside {
-      height: 100%;
-      width: 150px;
-      padding: 16px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 90px;
-      background-color: lightblue;
-
-      >h2 {
-        margin-bottom: 4px;
-      }
-
-      >ol {
-        >li {
-          padding: 4px 0;
-        }
-      }
-    }
-
-    main {
-
-      overflow: auto;
-      background-color: tan;
     }
   }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  >aside {
+    flex-shrink: 0;
+  }
+
+  >main {
+    flex-grow: 1;
+  }
+}
+
+aside {
+  height: 100%;
+  width: 150px;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 90px;
+  background-color: #ffffff;
+
+  >h2 {
+    margin-bottom: 4px;
+  }
+
+  >ol {
+    >li a {
+      display: block;
+      padding: 4px 0;
+    }
+
+    >li .router-link-active {
+      color: #fff;
+      background-color: #66CCFF;
+      border-radius: 20px;
+    }
+  }
+}
+
+main {
+  overflow: auto;
+  background-color: #eee;
 }
 </style>

@@ -21,7 +21,7 @@ export default {
     // 路由跳转后隐藏 aside (pc一直显示，移动端需要隐藏)
     router.afterEach(() => {
       if (width <= 500) {
-        asideVisible.value = !asideVisible.value
+        asideVisible.value = false
       }
     });
   },

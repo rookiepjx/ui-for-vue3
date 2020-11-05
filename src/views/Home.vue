@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import TopNav from "../components/TopNav.vue";
+import TopNav from "../components/TopNav/TopNav.vue";
 export default {
   components: {
     TopNav,
@@ -53,12 +53,12 @@ export default {
       margin: 1em 1em;
       padding: 0.4em 1em;
       border-radius: 10px;
-      background-color: #67c23a;
+      background-color: #2ed573;
       transition: .2s linear;
     }
 
     >a:hover {
-      background-color: #94f75b;
+      background-color: #5352ed;
     }
   }
 }
