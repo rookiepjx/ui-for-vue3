@@ -19,8 +19,13 @@ export default {
     // 默认关闭
     // const checked = ref(true);
     const toggleSwitch = () => {
+      // 1.内部数据模型实现
       // checked.value = !checked.value;
-      context.emit("switch", !props.checked);
+      // 2.父子数据模型实现
+      // context.emit("switch", !props.checked);
+
+      // vue3新写法 v-model双向绑定
+      context.emit("update:checked", !props.checked)
     };
     return {
       toggleSwitch,
@@ -51,10 +56,6 @@ $h2: $h1 - 4px;
     background-color: #3ae374;
     cursor: pointer;
 
-    &:focus {
-      outline: none;
-    }
-
     >span {
       position: absolute;
       top: 2px;
@@ -67,15 +68,16 @@ $h2: $h1 - 4px;
     }
 
     &:active {
+
       span {
-        width: $h2 + 10px;
+        width: $h2 + 6px;
       }
     }
 
     &.checked:active {
       >span {
-        width: $h2 + 10px;
-        margin-left: -10px;
+        width: $h2 + 6px;
+        margin-left: -6px;
       }
     }
 
