@@ -3,7 +3,7 @@
   <button class="switch" @click="toggleSwitch" :class="{ checked: checked }">
     <span></span>
   </button>
-  <div class="status">{{checked?"已关闭":"已激活"}}</div>
+  <div class="status">{{ checked ? "已关闭" : "已激活" }}</div>
 </div>
 </template>
 
@@ -13,14 +13,14 @@ import {
 } from "vue";
 export default {
   props: {
-    checked: Boolean
+    checked: Boolean,
   },
   setup(props, context) {
     // 默认关闭
     // const checked = ref(true);
     const toggleSwitch = () => {
       // checked.value = !checked.value;
-      context.emit("switch", !props.checked)
+      context.emit("switch", !props.checked);
     };
     return {
       toggleSwitch,
@@ -37,21 +37,23 @@ $h2: $h1 - 4px;
   padding: 20px;
   background-color: #fff;
 
-  .status {
-    padding: 10px 0;
-  }
-
   >.title {
     padding: 10px 0;
   }
 
   >.switch {
     position: relative;
+    padding: 10px 0;
+    border: none;
     width: $h1 * 2;
     height: $h1;
     border-radius: $h1 / 2;
     background-color: #3ae374;
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
 
     >span {
       position: absolute;
@@ -62,6 +64,19 @@ $h2: $h1 - 4px;
       border-radius: $h2 / 2;
       background-color: #fff;
       transition: all 0.2s linear;
+    }
+
+    &:active {
+      span {
+        width: $h2 + 10px;
+      }
+    }
+
+    &.checked:active {
+      >span {
+        width: $h2 + 10px;
+        margin-left: -10px;
+      }
     }
 
     &.checked {

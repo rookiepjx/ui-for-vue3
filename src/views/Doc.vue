@@ -6,16 +6,16 @@
       <h2>组件列表</h2>
       <ol>
         <li>
-          <router-link to="/doc/switch">switch组件</router-link>
+          <router-link to="/doc/switch">Switch组件</router-link>
         </li>
         <li>
-          <router-link to="/doc/a">组件a</router-link>
+          <router-link to="/doc/button">Button组件</router-link>
         </li>
         <li>
-          <router-link to="/doc/b">组件b</router-link>
+          <router-link to="/doc/tab">Tab组件</router-link>
         </li>
         <li>
-          <router-link to="/doc/c">组件c</router-link>
+          <router-link to="/doc/modal">Modal组件</router-link>
         </li>
       </ol>
     </aside>
@@ -88,6 +88,7 @@ aside {
   left: 0;
   padding-top: 90px;
   background-color: #ffffff;
+  z-index: 1;
 
   >h2 {
     margin-bottom: 4px;
@@ -103,6 +104,7 @@ aside {
       color: #fff;
       background-color: #66CCFF;
       border-radius: 20px;
+
     }
   }
 }
