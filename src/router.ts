@@ -17,6 +17,18 @@ const router = createRouter({
 					path: "switch",
 					component: () => import("../src/components/Switch/SwitchDemo.vue"),
 				},
+				{
+					path: "button",
+					component: () => import("../src/components/Button/ButtonDemo.vue"),
+				},
+				{
+					path: "tab",
+					component: () => import("../src/components/Tab/TabDemo.vue"),
+				},
+				{
+					path: "modal",
+					component: () => import("../src/components/Modal/ModalDemo.vue"),
+				},
 			],
 		},
 	],

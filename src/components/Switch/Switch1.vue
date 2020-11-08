@@ -25,7 +25,7 @@ export default {
       // context.emit("switch", !props.checked);
 
       // vue3新写法 v-model双向绑定
-      context.emit("update:checked", !props.checked)
+      context.emit("update:checked", !props.checked);
     };
     return {
       toggleSwitch,
@@ -39,8 +39,11 @@ $h1: 22px;
 $h2: $h1 - 4px;
 
 .box {
-  padding: 20px;
-  background-color: #fff;
+  padding: 10px;
+
+  >.status {
+    padding: 10px 0;
+  }
 
   >.title {
     padding: 10px 0;
@@ -68,7 +71,6 @@ $h2: $h1 - 4px;
     }
 
     &:active {
-
       span {
         width: $h2 + 6px;
       }

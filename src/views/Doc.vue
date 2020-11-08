@@ -98,6 +98,7 @@ aside {
     >li a {
       display: block;
       padding: 4px 0;
+      margin: 6px 0;
     }
 
     >li .router-link-active {
