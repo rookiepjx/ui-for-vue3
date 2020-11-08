@@ -1,0 +1,5 @@
+<template>
+<div>
+  <h2>Modal</h2>
+</div>
+</template>

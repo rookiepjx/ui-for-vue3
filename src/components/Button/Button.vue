@@ -10,61 +10,79 @@
 <script lang="ts">
 import {
   computed
-} from 'vue'
+} from "vue";
 // 声明规定props类型和值
 declare const props: {
-  theme ? : 'button' | 'text' | 'link',
-  size ? : 'normal' | 'mini' | 'large',
-  level ? : 'default' | 'info' | 'success' | 'warning' | 'danger',
-  disabled: boolean,
-  loading: boolean
-}
+  theme ? : "button" | "text" | "link";
+  size ? : "normal" | "mini" | "large";
+  level ? : "default" | "info" | "success" | "warning" | "danger";
+  disabled: boolean;
+  loading: boolean;
+};
 
 export default {
-  setup(props) {
+  setup(props, context) {
     const {
       theme,
       size,
       level
-    } = props
-    const classes = computed(() => {
+    } = props;
+    const classes = () => {
       return {
         [`star-theme-${theme}`]: theme,
         [`star-size-${size}`]: size,
         [`star-level-${level}`]: level,
-      }
-    })
+      };
+    };
+    return {
+      theme,
+      size,
+      level,
+      classes
+    };
   },
   props: {
     theme: {
       type: String,
-      default: 'button'
+      default: "button",
     },
     size: {
       type: String,
-      default: 'normal'
+      default: "normal",
     },
     level: {
       type: String,
-      default: 'default'
+      default: "default",
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loading: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
+// const {
+//   theme,
+//   size,
+//   level
+// } = props;
+// export const classes = computed(() => {
+//   return {
+//     [`star-theme-${theme}`]: theme,
+//     [`star-size-${size}`]: size,
+//     [`star-level-${level}`]: level,
+//   };
+// });
 </script>
 
 <style lang="scss" scoped>
 $border-radius: 4px;
 $border: 1px #ddd solid;
 $border-hover: 1px #c6e2ff solid;
-$default-text-hover:#40a9ff;
+$default-text-hover: #40a9ff;
 // 主题背景色
 $default: #fff;
 $default-hover: #ecf5ff;
@@ -74,10 +92,10 @@ $success: #67c23a;
 $success-hover: #85ce61;
 $info: #909399;
 $info-hover: #a6a9ad;
-$warn:#e6a23c;
-$warn-hover:#ebb563;
-$danger:#f56c6c;
-$danger-hover:#f78989;
+$warn: #e6a23c;
+$warn-hover: #ebb563;
+$danger: #f56c6c;
+$danger-hover: #f78989;
 
 .content {
   >.star-button {

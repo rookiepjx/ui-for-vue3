@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 
+
 const history = createWebHistory();
 const router = createRouter({
 	history,
@@ -11,8 +12,11 @@ const router = createRouter({
 		{
 			path: "/doc",
 			component: () => import("../src/views/Doc.vue"),
-			redirect: "/doc/switch",
 			children: [
+				{
+					path: "",
+					redirect: "/doc/switch",
+				},
 				{
 					path: "switch",
 					component: () => import("../src/components/Switch/SwitchDemo.vue"),

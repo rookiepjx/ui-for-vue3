@@ -29,6 +29,8 @@
 <script lang="ts">
 import {
   inject,
+  onMounted,
+  onBeforeMount,
   Ref
 } from "vue";
 import TopNav from "../components/TopNav/TopNav.vue";
