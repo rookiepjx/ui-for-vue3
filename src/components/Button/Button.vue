@@ -229,7 +229,7 @@ $danger-bgc1: #f78989;
     width: 14px;
     height: 14px;
     margin-right: 6px;
-    vertical-align: top;
+    vertical-align: bottom;
     border-radius: 50%;
     border-width: 2px;
     border-style: solid;

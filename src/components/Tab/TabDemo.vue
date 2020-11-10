@@ -3,14 +3,27 @@
   <h1 class="title">Tab组件</h1>
   <div class="box">
     <h3>常规用法</h3>
-    <Tab class="cpn" />
+    <Tab v-model:selected="index" :titles="titles" class="cpn" />
   </div>
 </div>
 </template>
 
 <script lang="ts">
+import {
+  ref
+} from 'vue'
 import Tab from "./Tab.vue"
 export default {
+  setup() {
+    const titles = ["用户管理", "角色管理", "订单管理"]
+    const index = ref(0)
+    return {
+      titles,
+      index
+
+    }
+  },
+
   components: {
     Tab
   }
