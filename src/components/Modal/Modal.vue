@@ -1,5 +1,4 @@
 <template>
-  <div>
     <h2>Modal</h2>
     <template v-if="visible">
       <Teleport to="body">
@@ -25,9 +24,6 @@
         </div>
       </Teleport>
     </template>
-  </div>
-</template>
-</div>
 </template>
 <script lang="ts">
 import { Button } from "../Button/index";
